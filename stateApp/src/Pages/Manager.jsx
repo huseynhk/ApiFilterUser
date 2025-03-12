@@ -70,7 +70,7 @@ function Manager() {
 
       <div className="mt-3">
         <button
-          style={{ width: "150px" }}
+          style={{ width: "170px" }}
           onClick={() => setSearchParams({})}
           className="btn btn-primary mb-3"
         >
