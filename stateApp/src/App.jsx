@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
-// import { Manager, UserIdPage } from "./Pages";
-import Loading from "./Pages/Loading";
+import { Loading } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { ROUTER } from "./constant/router";
 import { ToastContainer } from "react-toastify";
@@ -9,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Manager = React.lazy(() => import("./Pages/Manager"));
 const UserIdPage = React.lazy(() => import("./Pages/UserId"));
-
 
 function App() {
   return (

@@ -1,3 +1,4 @@
 import Manager from "./Manager";
 import UserIdPage from "./UserId";
-export { Manager, UserIdPage };
+import Loading from "./Loading"
+export { Manager, UserIdPage, Loading };
