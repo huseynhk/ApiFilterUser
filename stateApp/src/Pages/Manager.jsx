@@ -12,7 +12,7 @@ function Manager() {
   const [filteredData, setFilteredData] = useState([]);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get("role");
+  const activeTab = searchParams.get("role") || "all";
 
   const handleData = async () => {
     const response = await GetDatas();
@@ -21,7 +21,7 @@ function Manager() {
   };
 
   const filterUsers = (users, role) => {
-    if (role) {
+    if (role != "all") {
       setFilteredData(users.filter((user) => user.role === role));
     } else {
       setFilteredData(users);
@@ -55,6 +55,16 @@ function Manager() {
 
       {/* Tabs */}
       <Nav variant="tabs" activeKey={activeTab}>
+        <Nav.Item key="all">
+          <Nav.Link
+            eventKey="all"
+            onClick={() => setSearchParams({})}
+            // onClick={() => setSearchParams({ role: "" })}
+            className={activeTab === "all" ? "default" : "white"}
+          >
+            All Users
+          </Nav.Link>
+        </Nav.Item>
         {rolesArray?.map((role) => (
           <Nav.Item key={role}>
             <Nav.Link
@@ -69,13 +79,6 @@ function Manager() {
       </Nav>
 
       <div className="mt-3">
-        <button
-          style={{ width: "170px" }}
-          onClick={() => setSearchParams({})}
-          className="btn btn-primary mb-3"
-        >
-          Reset
-        </button>
         <Table
           striped
           bordered
