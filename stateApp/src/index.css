@@ -1,0 +1,55 @@
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgb(75, 75, 255);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 255);
+}
+
+.default {
+  text-transform: capitalize !important;
+}
+.white {
+  color: white !important;
+  text-transform: capitalize !important;
+}
+
+.role-cell.admin {
+  color: green;
+}
+
+.role-cell.moderator {
+  color: blue;
+}
+
+.role-cell.user {
+  color: red;
+}
+
+.eye-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.eye-icon:hover {
+  transform: scale(1.1);
+}
+.imgParent {
+  min-height: 100px;
+  max-height: 100px;
+}
+.imgCard {
+  object-fit: cover;
+  width: 300px;
+  height: 75px;
+  border-radius: 10px;
+}
